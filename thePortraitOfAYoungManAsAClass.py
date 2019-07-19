@@ -2,7 +2,7 @@ from Family import Family, Parent
 from Job import Job
 from Base import Person, Language
 
-class YoungAdult(Person):
+class YoungMan(Person):
     def __init__(self, name, age, location, mother, father, siblings = None):
         self.mother = mother
         self.father = father
@@ -21,7 +21,7 @@ class YoungAdult(Person):
 
 mother = Parent("Mariangela", 76, "Burago di Molgora")
 father = Parent("Antonio", 75, "Burago di Molgora")
-youngAdult = YoungAdult("Riccardo", 31, "Berlin", mother, father)
+youngAdult = YoungMan("Riccardo", 31, "Berlin", mother, father)
 
 familyMembers = {"mother": mother, "father" : father, "youngAdult" : youngAdult}
 family = Family(familyMembers)
