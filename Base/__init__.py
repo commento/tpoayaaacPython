@@ -16,7 +16,7 @@ class Person():
         self.location = location
         self.job = None
 
-        self.__mood = "good"
+        self.__mood = "ok"
 
     def isSad(self):
         return True if "sad" or "depressed" in self.mood else False
@@ -32,5 +32,8 @@ class Relationship:
         self.kind = kind
         self.members = members
 
-    def isBroken(self, member):
-        if member.isSad()
+    def isBroken(self, member1, member2):
+        if member1 in members and member2 in members:
+            return True if member1.dontlike(member2) or member2.dontLike(member1)
+        else:
+            return "Not in a Relationship"
