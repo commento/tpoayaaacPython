@@ -26,3 +26,11 @@ class Person():
 
     def findAJob(self, job):
         self.job = job
+
+class Relationship:
+    def __init__(self, kind, members):
+        self.kind = kind
+        self.members = members
+
+    def isBroken(self, member):
+        if member.isSad()

@@ -3,7 +3,7 @@ from Base import Person, Language
 
 class Parent(Job, Person):
     def __init__(self, name, age, location):
-        Person.__init__(self, name, age, location, Language("human", "italian", "mother tongue", ["communicative", "informative", "educational"]))
+        Person.__init__(self, name, age, location, Language("human-human", "italian", "mother tongue", ["communicative", "informative", "educational"]))
         Job.__init__(self, "VDU operator", "manager", ["money", "family well-being", "personal fulfillment"])
 
         self.hasChildren = True

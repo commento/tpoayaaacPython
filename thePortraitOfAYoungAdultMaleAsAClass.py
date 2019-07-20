@@ -2,17 +2,24 @@ from Family import Family, Parent
 from Job import Job
 from Base import Person, Language
 
-class YoungMan(Person):
+class YoungAdultMale(Person):
     def __init__(self, name, age, location, mother, father, siblings = None):
         self.mother = mother
         self.father = father
-        Person.__init__(self, "Riccardo", 31, location, Language("human", "italian", "mother tongue", ["communicative", "informative", "ironic", "sarcastic"]))
+        Person.__init__(self, name, age, location, Language("human-human", "italian", "mother tongue", ["communicative", "informative", "ironic", "sarcastic"]))
+        self.code = None
         self.siblings = siblings
         self.isOnlyChild = False
         if siblings is None:
             self.isOnlyChild = True
 
         self.hasLeftFamily = False
+
+    def startCoding(self):
+        code = Language("human-machine", ["c/c++","python"], "average", ["prodedural", "informative"])
+
+    def canCode(self):
+        return code is not None
 
     def __repr__(self):
         pass
