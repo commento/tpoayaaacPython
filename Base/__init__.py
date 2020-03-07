@@ -3,7 +3,7 @@ class StressLevel(Enum):
     RELAX = 0
     TENSE = 1
 
-
+# TODO: add months increment, It can be useful when describing Berlin Time in detail
 class Time:
     def __init__(self, currentYear):
         self.currentYear = currentYear

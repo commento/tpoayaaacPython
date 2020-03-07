@@ -24,7 +24,6 @@ class YoungAdultMale(Person):
         if location == "Berlin":
             self.language += [Language("human-human", "english", "upper intermediate", ["communicative", "informative"])] + [Language("human-human", "german", "basic", ["communicative", "informative"])]
 
-
     def __repr__(self):
         pass
 
@@ -37,8 +36,12 @@ youngAdult = YoungAdultMale("R*******", 25, "45°35'49.3\"N 9°22'15.8\"E", moth
 familyMembers = {"mother": mother, "father" : father, "youngAdult" : youngAdult}
 family = Family(familyMembers)
 
+
+# TODO: add company name encrypted
 youngAdultJob = Job("VDU operator", "software developer", "Agrate", ["money", "personal fulfillment", "be an adult"])
 youngAdult.findAJob(youngAdultJob)
+
+# TODO: extend emotional involvement / relationships about the first job
 
 time.yearsHavePassed(1)
 youngAdult.loseAJob()
@@ -55,6 +58,8 @@ time.yearsHavePassed(2)
 youngAdult.leaveAJob()
 youngAdult.moveTo("52°32'26.2\"N 13°23'53.5\"E")
 
+# TODO: add additional information here - unemployment / language course1 / Berlin Messe
+
 youngAdultJob = Job("VDU operator", "software developer internship / limited time contract", "Berlin", ["need"])
 youngAdult.findAJob(youngAdultJob)
 time.yearsHavePassed(1)
@@ -65,6 +70,11 @@ youngAdult.findAJob(youngAdultJob)
 time.yearsHavePassed(1)
 youngAdult.leaveAJob()
 
+# TODO: add additional information here - description about language course / new job / decision to return back to Italy
+
 time.yearsHavePassed(1)
 youngAdult.moveTo("45°28'55.7\"N 9°15'46.5\"E")
+
+# TODO: fix age handling / Time
+print(youngAdult.age)
 
