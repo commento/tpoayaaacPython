@@ -1,6 +1,6 @@
 from Family import Family, Parent
 from Job import Job
-from Base import Person, Language
+from Base import Person, Language, Time
 
 class YoungAdultMale(Person):
     def __init__(self, name, age, location, mother, father, siblings = None):
@@ -21,9 +21,6 @@ class YoungAdultMale(Person):
     def canCode(self):
         return code is not None
 
-    def moveTo(location):
-        self.location = location
-
         if location == "Berlin":
             self.language += [Language("human-human", "english", "upper intermediate", ["communicative", "informative"])] + [Language("human-human", "german", "basic", ["communicative", "informative"])]
 
@@ -32,10 +29,10 @@ class YoungAdultMale(Person):
         pass
 
 
-
-mother = Parent("Mariangela", 76, "Burago di Molgora", "employee")
-father = Parent("Antonio", 75, "Burago di Molgora", "manager")
-youngAdult = YoungAdultMale("Riccardo", 25, "Burago di Molgora", mother, father)
+time = Time(2012)
+mother = Parent("M********", 76, "45°35'49.3\"N 9°22'15.8\"E", "employee")
+father = Parent("A******", 75, "45°35'49.3\"N 9°22'15.8\"E", "manager")
+youngAdult = YoungAdultMale("R*******", 25, "45°35'49.3\"N 9°22'15.8\"E", mother, father)
 
 familyMembers = {"mother": mother, "father" : father, "youngAdult" : youngAdult}
 family = Family(familyMembers)
@@ -43,10 +40,31 @@ family = Family(familyMembers)
 youngAdultJob = Job("VDU operator", "software developer", "Agrate", ["money", "personal fulfillment", "be an adult"])
 youngAdult.findAJob(youngAdultJob)
 
+time.yearsHavePassed(1)
+youngAdult.loseAJob()
+
+youngAdultJob = Job("VDU operator", "software developer", "Rozzano", ["money", "personal fulfillment", "be an adult"])
+youngAdult.findAJob(youngAdultJob)
+
+time.yearsHavePassed(2)
 family.memberLeave("Riccardo")
 
-print(youngAdult.language[0].name)
-print(youngAdult.hasLeftFamily)
-print(youngAdult.hasAJob())
-print(mother.isSad())
+youngAdult.moveTo("45°28'57.2\"N 9°13'22.4\"E")
+
+time.yearsHavePassed(2)
+youngAdult.leaveAJob()
+youngAdult.moveTo("52°32'26.2\"N 13°23'53.5\"E")
+
+youngAdultJob = Job("VDU operator", "software developer internship / limited time contract", "Berlin", ["need"])
+youngAdult.findAJob(youngAdultJob)
+time.yearsHavePassed(1)
+youngAdult.loseAJob()
+
+youngAdultJob = Job("VDU operator", "software developer", "Berlin", ["money", "personal fulfillment", "be an adult"])
+youngAdult.findAJob(youngAdultJob)
+time.yearsHavePassed(1)
+youngAdult.leaveAJob()
+
+time.yearsHavePassed(1)
+youngAdult.moveTo("45°28'55.7\"N 9°15'46.5\"E")
 

@@ -2,6 +2,17 @@ from enum import Enum
 class StressLevel(Enum):
     RELAX = 0
     TENSE = 1
+
+
+class Time:
+    def __init__(self, currentYear):
+        self.currentYear = currentYear
+        self.yearsPassed = 0
+
+    def yearsHavePassed(self, numberOfYears):
+        self.currentYear = self.currentYear + numberOfYears
+        self.yearsPassed = self.yearsPassed + numberOfYears
+
     
 class Tool:
     def __init__(self, name, purposes):
@@ -39,13 +50,22 @@ class Person():
     def findAJob(self, job):
         self.job = job
 
+    def loseAJob(self):
+        self.job = None
+
+    def leaveAJob(self):
+        self.job = None
+
     def dontLike(self, person):
         return True if person in self.__peopleNotLiked else False
 
-    def hasStress(level):
+    def hasStress(self, level):
         self.stress = Stress.__init__(level)
 
-    def isStressed():
+    def moveTo(self, location):
+        self.location = location
+
+    def isStressed(self):
         return True if self.stress else False
 
     def increaseStress():
