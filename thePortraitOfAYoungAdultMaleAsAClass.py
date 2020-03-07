@@ -21,25 +21,31 @@ class YoungAdultMale(Person):
     def canCode(self):
         return code is not None
 
+    def moveTo(location):
+        self.location = location
+
+        if location == "Berlin":
+            self.language += [Language("human-human", "english", "upper intermediate", ["communicative", "informative"])] + [Language("human-human", "german", "basic", ["communicative", "informative"])]
+
+
     def __repr__(self):
         pass
 
 
 
-mother = Parent("Mariangela", 76, "Burago di Molgora")
-father = Parent("Antonio", 75, "Burago di Molgora")
-youngAdult = YoungMan("Riccardo", 31, "Berlin", mother, father)
+mother = Parent("Mariangela", 76, "Burago di Molgora", "employee")
+father = Parent("Antonio", 75, "Burago di Molgora", "manager")
+youngAdult = YoungAdultMale("Riccardo", 25, "Burago di Molgora", mother, father)
 
 familyMembers = {"mother": mother, "father" : father, "youngAdult" : youngAdult}
 family = Family(familyMembers)
 
-
-youngAdultJob = Job("VDU operator", "software developer", ["money", "personal fulfillment", "be an adult"])
+youngAdultJob = Job("VDU operator", "software developer", "Agrate", ["money", "personal fulfillment", "be an adult"])
 youngAdult.findAJob(youngAdultJob)
 
 family.memberLeave("Riccardo")
 
-print(youngAdult.language.name)
+print(youngAdult.language[0].name)
 print(youngAdult.hasLeftFamily)
 print(youngAdult.hasAJob())
 print(mother.isSad())

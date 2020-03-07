@@ -2,9 +2,9 @@ from Job import Job
 from Base import Person, Language
 
 class Parent(Job, Person):
-    def __init__(self, name, age, location):
+    def __init__(self, name, age, location, jobTitle):
         Person.__init__(self, name, age, location, Language("human-human", "italian", "mother tongue", ["communicative", "informative", "educational"]))
-        Job.__init__(self, "VDU operator", "manager", ["money", "family well-being", "personal fulfillment"])
+        Job.__init__(self, "VDU operator", jobTitle, "Milan Area", ["money", "family well-being", "personal fulfillment"])
 
         self.hasChildren = True
 
