@@ -47,7 +47,7 @@ youngAdultJob = Job("VDU operator", "software developer", "Rozzano", ["money", "
 youngAdult.findAJob(youngAdultJob)
 
 time.yearsHavePassed(2)
-family.memberLeave("Riccardo")
+family.memberLeave("R*******")
 
 youngAdult.moveTo("45°28'57.2\"N 9°13'22.4\"E")
 
